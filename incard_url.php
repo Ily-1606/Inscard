@@ -1,15 +1,14 @@
 <?php
-if (isset($_POST["url"])) {
-    if (!empty($_POST["url"])) {
+if (isset($_GET["url"])) {
+    if (!empty($_GET["url"])) {
         include_once("function.php");
-        auto_creare_api("url");
         $source_width = 600;
         $source_height = 900;
         $final_img = imagecreatetruecolor(1200, 1200);
         imagealphablending($final_img, true);
         imagesavealpha($final_img, true);
         include_once("getinfo.php");
-        $url = $_POST["url"];
+        $url = $_GET["url"];
         $im2 = get_image_from_url($url);
         $out = imagecreatetruecolor(1200, 1200);
         $jpeg = blurImage(resize_imagejpeg($im2, 1200, 1200), 0.37);

@@ -23,12 +23,18 @@ if (isset($_POST["url"])) {
         $inside_card_w = 600 - ($source_width / 2);
         $inside_card_h = 600 -  ($source_height / 2);
         $im2 = write_text($im2, "16", 50, 225, json_decode('"' . $data["name"] . '"'));
+        /*
         $im2 = write_text($im2, "20", 180, 150, $data["feed_count"], true);
         $im2 = write_text($im2, "16", 180, 180, "Bài viết");
         $im2 = write_text($im2, "20", 280, 150, $data["follows"], true);
         $im2 = write_text($im2, "16", 280, 180, "Người theo dõi");
         $im2 = write_text($im2, "20", 450, 150, $data["follow_for"], true);
         $im2 = write_text($im2, "16", 450, 180, "Đang theo dõi");
+        */
+        $im2 = write_text($im2, "20", 200, 150, $data["feed_count"], true);
+        $im2 = write_text($im2, "16", 200, 180, "Bài viết");
+        $im2 = write_text($im2, "20", 350, 150, $data["follows"], true);
+        $im2 = write_text($im2, "16", 350, 180, "Người theo dõi"); 
         $im2 = write_text($im2, "25", $source_width - 70, 100, json_decode('"&#xf0c9;"'), true, true);
         $im2 = write_text($im2, "18", "center", 70, $data["username"], true);
 
